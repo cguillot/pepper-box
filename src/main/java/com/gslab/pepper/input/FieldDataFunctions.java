@@ -243,6 +243,22 @@ public class FieldDataFunctions {
         }
         return builder.toString();
     }
+    
+    public static String RANDOM_ALPHA_NUMERIC_RANDOM_SIZE(String charSet, int min, int max) {
+
+        StringBuilder builder = new StringBuilder();
+        int charSetLen = charSet.length();
+        
+        int length = min + random.nextInt(max - min);
+
+        builder.append("L").append(length).append("-");
+
+        for (int i = 0; i < length; i++) {
+            builder.append(charSet.charAt(random.nextInt(charSetLen)));
+        }
+
+        return builder.toString();
+    }
 
     /**
      *Generates ranom UUID
